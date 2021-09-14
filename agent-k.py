@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import requests
 import threading 
 import argparse 
@@ -391,11 +393,20 @@ def do_it():
 
 
 def main():
+    print('''
+ ▄▄▄·  ▄▄ • ▄▄▄ . ▐ ▄ ▄▄▄▄▄        ▄ •▄ 
+▐█ ▀█ ▐█ ▀ ▪▀▄.▀·•█▌▐█•██          █▌▄▌▪
+▄█▀▀█ ▄█ ▀█▄▐▀▀▪▄▐█▐▐▌ ▐█.▪        ▐▀▀▄·
+▐█ ▪▐▌▐█▄▪▐█▐█▄▄▌██▐█▌ ▐█▌·        ▐█.█▌
+ ▀  ▀ ·▀▀▀▀  ▀▀▀ ▀▀ █▪ ▀▀▀         ·▀  ▀ 
+
+-----Result may not be accurate always------
+    ''')
     global NAME,OUTPUT
     arg=parse_arg()
     NAME = arg.username
     OUTPUT = arg.output
-    tvalue = arg.threads
+    tvalue =int(arg.threads)
 
     thread = []
     for i in range(tvalue):
